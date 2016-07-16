@@ -5,9 +5,10 @@ import {syncHistoryWithStore} from 'react-router-redux';
 import browserHistory from 'react-router/lib/browserHistory';
 import Router from 'react-router/lib/Router';
 import createStore from './redux/config';
+import initialState from './redux/initialState';
 import getRoutes from './routes/';
 
-const store = createStore({});
+const store = createStore(initialState);
 const history = syncHistoryWithStore(browserHistory, store);
 
 ReactDOM.render(
