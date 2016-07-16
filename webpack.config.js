@@ -23,7 +23,7 @@ module.exports = {
             { test: /\.html$/, loader: 'raw' },
             { test: /\.css$/, loader: "style!css" },
             { test: /\.scss$/, loaders: ["style", "css", "sass"] },
-            { test: /\.js$/, loader: "babel-loader", exclude: /(node_modules|bower_components)/ },
+            { test: /\.js$/, loader: "babel-loader", query: { presets: ['react'] }, exclude: /(node_modules|bower_components)/ },
             { test: /\.(otf|ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/, loader : 'file-loader' },
             { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' }
         ]
