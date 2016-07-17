@@ -23,6 +23,6 @@ export default function(data) {
     //     finalCreateStore = applyMiddleware(_promiseMiddleware, _transitionMiddleware, _crashReportMiddleWare)(createStore);
     // }
     finalCreateStore = applyMiddleware()(createStore);
-    return finalCreateStore(reducer, data);
+    return finalCreateStore(reducer, data, window.devToolsExtension && window.devToolsExtension());
 }
 

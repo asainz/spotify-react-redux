@@ -2,11 +2,12 @@
   "name": "webpackstarter",
   "version": "0.1.0",
   "description": "A simple bolerplate repo with webpack and babel configured",
-  "main": "src/scripts/main.js",
+  "main": "src/main.js",
   "dependencies": {
     "babel-loader": "^6.2.4",
     "babel-plugin-transform-class-properties": "^6.10.2",
     "babel-plugin-transform-decorators": "^6.8.0",
+    "babel-plugin-transform-object-rest-spread": "^6.8.0",
     "babel-preset-react": "^6.11.1",
     "eslint-loader": "^1.4.1",
     "extract-text-webpack-plugin": "^1.0.1",

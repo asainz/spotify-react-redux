@@ -4,7 +4,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var ROOT_PATH = path.resolve(__dirname);
 
 module.exports = {
-    entry: "./src/scripts/main.js",
+    entry: "./src/main.js",
     output: {
         path: __dirname + '/build',
         filename: "bundle.js"
@@ -43,11 +43,15 @@ module.exports = {
         new ExtractTextPlugin("styles.css")
     ],
     resolve: {
+        root: path.resolve('src'),
         modulesDirectories: [
-            'node_modules',
-            'src/scripts/components/',
-            'src/scripts/views/'
+            'node_modules'
         ],
-        extensions: ['', '.json', '.js', '.scss']
+        extensions: ['', '.json', '.js', '.scss'],
+        alias: {
+            actions: 'actions',
+            components: 'components',
+            views: 'views'
+        }
     }
 };
