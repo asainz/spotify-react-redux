@@ -1,4 +1,4 @@
-import './home.scss';
+import './view-styles';
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 
