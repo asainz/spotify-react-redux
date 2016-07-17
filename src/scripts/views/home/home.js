@@ -2,7 +2,7 @@ import './home.scss';
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 
-import SearchBox from 'searchBox/searchBox';
+import SearchBox from 'search-box';
 
 export default
 class HomeView extends Component {

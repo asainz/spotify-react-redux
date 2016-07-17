@@ -48,6 +48,6 @@ module.exports = {
             'src/scripts/components/',
             'src/scripts/views/'
         ],
-        extensions: ['', '.json', '.js']
+        extensions: ['', '.json', '.js', '.scss']
     }
 };

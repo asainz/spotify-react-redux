@@ -1,4 +1,4 @@
-import './searchBox.scss';
+import './component-styles';
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 
