@@ -5,6 +5,12 @@ export default {
         name: 'My Super App'
     }),
     searchBox: Immutable.Map({
-        query: ''
+        query: '',
+        error: '',
+        results: Immutable.Map({
+            artists: Immutable.Map({
+                items: Immutable.List()
+            })
+        })
     })
 }

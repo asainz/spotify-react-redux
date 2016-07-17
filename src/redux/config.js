@@ -3,6 +3,7 @@ import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 // import logMiddleware from './logMiddleware';
 // import crashReportMiddleWare from './crashReporterMiddleware';
 // import transitionMiddleware from './transitionMiddleware';
+import thunkMiddleware from 'redux-thunk';
 import reducers from '../reducers/';
 const reducer = combineReducers(reducers);
 
@@ -22,7 +23,7 @@ export default function(data) {
     // } else {
     //     finalCreateStore = applyMiddleware(_promiseMiddleware, _transitionMiddleware, _crashReportMiddleWare)(createStore);
     // }
-    finalCreateStore = applyMiddleware()(createStore);
+    finalCreateStore = applyMiddleware(thunkMiddleware)(createStore);
     return finalCreateStore(reducer, data, window.devToolsExtension && window.devToolsExtension());
 }
 

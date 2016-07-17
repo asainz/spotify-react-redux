@@ -1,0 +1,15 @@
+$full-screen-loader-bg: rgba(0, 0, 0, 0.8);
+
+.full-screen-loader {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background-color: $full-screen-loader-bg;
+    background-repeat: no-repeat;
+    background-position: 50%;
+
+    z-index: 99;
+}

@@ -2,10 +2,10 @@ import './component-styles';
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 
-export default
 class SearchBox extends Component{
     static propTypes = {
-        postQuery: PropTypes.func.isRequired
+        postQuery: PropTypes.func.isRequired,
+        errorInSearch: PropTypes.string
     }
 
     constructor(props){
@@ -36,6 +36,7 @@ class SearchBox extends Component{
     }
 
     render(){
+        const { errorInSearch } = this.props;
         return (
             <div>
                 <form onSubmit={this.handleOnSubmit}>
@@ -45,7 +46,12 @@ class SearchBox extends Component{
                     />
                     <input type="submit" value="Search!"/>
                 </form>
+                { errorInSearch ? <p>{errorInSearch}</p> : null }
             </div>
         );
     }
 }
+
+export default connect(state => ({
+    errorInSearch: state.searchBox.get('error')
+}))(SearchBox)

@@ -4,6 +4,7 @@
   "description": "A simple bolerplate repo with webpack and babel configured",
   "main": "src/main.js",
   "dependencies": {
+    "axios": "^0.13.1",
     "babel-loader": "^6.2.4",
     "babel-plugin-transform-class-properties": "^6.10.2",
     "babel-plugin-transform-decorators": "^6.8.0",
@@ -21,6 +22,7 @@
     "react-router": "^2.5.2",
     "react-router-redux": "^4.0.5",
     "redux": "^3.5.2",
+    "redux-thunk": "^2.1.0",
     "sass-loader": "^4.0.0",
     "sasslint-loader": "0.0.1",
     "script-loader": "^0.7.0",
