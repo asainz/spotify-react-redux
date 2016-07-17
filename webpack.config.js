@@ -41,5 +41,13 @@ module.exports = {
     plugins: [
         // new webpack.optimize.UglifyJsPlugin({minimize: true}),
         new ExtractTextPlugin("styles.css")
-    ]
+    ],
+    resolve: {
+        modulesDirectories: [
+            'node_modules',
+            'src/scripts/components/',
+            'src/scripts/views/'
+        ],
+        extensions: ['', '.json', '.js']
+    }
 };
