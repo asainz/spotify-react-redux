@@ -1,18 +1,19 @@
 import './component-styles';
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
+import Immutable from 'immutable';
 
 export default
 class ItemListSection extends Component{
     static propTypes = {
         name: PropTypes.string.isRequired,
-        data: PropTypes.object
+        data: PropTypes.object.isRequired
     }
 
     render(){
         const { name, data } = this.props;
 
-        if( !data || data.get('items').size === 0 ){
+        if( data.get('items').size === 0 ){
             return null;
         }
 
@@ -32,3 +33,9 @@ class ItemListSection extends Component{
         );
     }
 }
+
+ItemListSection.defaultProps = {
+    data: Immutable.Map({
+        items: Immutable.List()
+    })
+};
