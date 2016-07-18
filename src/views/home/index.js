@@ -2,6 +2,7 @@ import './view-styles';
 import React, {Component, PropTypes} from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import {get} from 'lodash/object';
 
 import SearchBox from 'components/search-box';
 import ItemsList from 'components/items-list';
@@ -29,9 +30,15 @@ class HomeView extends Component {
     }
 }
 
+HomeView.defaultProps = {
+    query: '',
+    searchBoxActions: {},
+    searchResults: {}
+};
+
 export default connect(state => ({
-    query: state.searchBox.get('query'),
-    searchResults: state.searchBox.get('results')
+    query: get(state, 'searchBox.query'),
+    searchResults: get(state, 'searchBox.results')
 }), dispatch => ({
     searchBoxActions: bindActionCreators(searchBoxActions, dispatch)
 }))(HomeView)

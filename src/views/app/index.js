@@ -1,6 +1,7 @@
 import './view-styles';
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
+import {get} from 'lodash/object';
 
 import FullScreenLoader from 'components/full-screen-loader';
 
@@ -23,7 +24,13 @@ class AppView extends Component {
     }
 }
 
+AppView.defaultProps = {
+    appName: '',
+    fullScreenLoader: false,
+    children: []
+};
+
 export default connect(state => ({
-    appName: state.app.get('name'),
-    fullScreenLoader: state.app.get('fullScreenLoader')
+    appName: get(state, 'app.name'),
+    fullScreenLoader: get(state, 'app.fullScreenLoader')
 }))(AppView)

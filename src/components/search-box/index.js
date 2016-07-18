@@ -1,6 +1,8 @@
 import './component-styles';
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
+import {get} from 'lodash/object';
+import {noop} from 'lodash/util';
 
 const SEARCH_TYPES = {
     ARTIST: 'artist',
@@ -74,6 +76,11 @@ class SearchBox extends Component{
     }
 }
 
+SearchBox.defaultProps = {
+    postQuery: noop,
+    errorInSearch: ''
+};
+
 export default connect(state => ({
-    errorInSearch: state.searchBox.get('error')
+    errorInSearch: get(state, 'searchBox.error')
 }))(SearchBox)

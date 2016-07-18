@@ -1,25 +1,23 @@
-import Immutable from 'immutable';
-
 export default {
-    app: Immutable.Map({
+    app:{
         name: 'My Super App'
-    }),
-    searchBox: Immutable.Map({
+    },
+    searchBox: {
         query: '',
         error: '',
-        results: Immutable.Map({
-            artists: Immutable.Map({
-                items: Immutable.List()
-            }),
-            albums: Immutable.Map({
-                items: Immutable.List()
-            }),
-            tracks: Immutable.Map({
-                items: Immutable.List()
-            }),
-            playlists: Immutable.Map({
-                items: Immutable.List()
-            })
-        })
-    })
+        results: {
+            artists: {
+                items: []
+            },
+            albums: {
+                items: []
+            },
+            tracks: {
+                items: []
+            },
+            playlists: {
+                items: []
+            }
+        }
+    }
 }
