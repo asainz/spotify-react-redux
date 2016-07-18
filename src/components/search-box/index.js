@@ -4,6 +4,8 @@ import {connect} from 'react-redux';
 import {get} from 'lodash/object';
 import {noop} from 'lodash/util';
 
+import SearchBoxTypeSelector from './search-box-type-selector';
+
 const SEARCH_TYPES = {
     ARTIST: 'artist',
     ALBUM: 'album',
@@ -61,13 +63,7 @@ class SearchBox extends Component{
                         onChange={this.handleQueryInputChange}
                         type="text"
                     />
-                    <select onChange={this.handleSearchForChange}>
-                        <option value={SEARCH_TYPES.ALL}>All</option>
-                        <option value={SEARCH_TYPES.ARTIST}>Artists</option>
-                        <option value={SEARCH_TYPES.ALBUM}>Albums</option>
-                        <option value={SEARCH_TYPES.TRACK}>Tracks</option>
-                        <option value={SEARCH_TYPES.PLAYLIST}>Playlists</option>
-                    </select>
+                    <SearchBoxTypeSelector onChange={this.handleSearchForChange} />
                     <input type="submit" value="Search!"/>
                 </form>
                 { errorInSearch ? <p>{errorInSearch}</p> : null }
