@@ -2,6 +2,8 @@ import './component-styles';
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 
+import ItemListSection from './items-list-section';
+
 export default
 class ItemsList extends Component{
     static propTypes = {
@@ -11,18 +13,13 @@ class ItemsList extends Component{
     render(){
         const { data } = this.props;
 
-        const items = data.get('artists').get('items').map((item, index) => {
-            return (
-                <li
-                    key={`items-list-item-${index}`}
-                >
-                    {item.get('name')}
-                </li>
-            );
-        });
-
         return (
-            <ul>{ items }</ul>
+            <ul>
+                <ItemListSection name="artists" data={data.get('artists')} />
+                <ItemListSection name="albums" data={data.get('albums')} />
+                <ItemListSection name="tracks" data={data.get('tracks')} />
+                <ItemListSection name="playlists" data={data.get('playlists')} />
+            </ul>
         );
     }
 }

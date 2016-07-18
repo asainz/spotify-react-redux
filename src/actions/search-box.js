@@ -31,7 +31,7 @@ export function postQuery(data) {
     return function(dispatch) {
         dispatch(postQueryInit(data.query));
 
-        const url = 'https://api.spotify.com/v1/search?type=artist&q=' + data.query;
+        const url = `https://api.spotify.com/v1/search?type=${data.type}&q=${data.query}`;
         return axios.get(url).then(function(response){
             dispatch(postQuerySuccess(response.data));
             return response.data;
